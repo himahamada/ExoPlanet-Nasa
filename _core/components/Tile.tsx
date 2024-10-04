@@ -6,23 +6,19 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 import { poppins, inter } from '_core/styles/fonts';
-import { ETheme } from '_core/constants/theme';
-import TileImage from '_core/components/TileImage';
-// import icons from '@/assets/icons';
-import { useThemeContext } from '_core/contexts/themeContext';
 
 import styles from './Tile.module.scss';
 
 type TPageData = {
     title: string;
-    desc: string;
-  };
-  
-  type TTileProps = {
+    desc: string | JSX.Element;
+};
+
+type TTileProps = {
     data: TPageData; // Define that the component receives a prop called 'data' of type TPageData
-  };
-  
-  const Tile: React.FC<TTileProps> = ({ data }) => {
+};
+
+const Tile: React.FC<TTileProps> = ({ data }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (

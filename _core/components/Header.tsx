@@ -7,11 +7,9 @@ import Link from 'next/link';
 
 import { poppins } from '_core/styles/fonts';
 
-// eslint-disable-next-line css-modules/no-unused-class
 import styles from './Header.module.scss';
 import ThemeSwitcher from './ThemeSwitcher';
 import NavItems from './NavItems';
-
 
 const Header = () => {
     const [, setSelectedIndex] = useState<number | null>(null);
@@ -29,8 +27,6 @@ const Header = () => {
             <div className={styles.navContainer}>
                 <NavItems />
             </div>
-            
-            
         </div>
     );
 };

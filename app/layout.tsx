@@ -13,6 +13,9 @@ import Main from '_core/components/Main';
 import Footer from '_core/components/Footer';
 // import auth from '../_coreservices/auth';
 
+
+
+
 // import { getHomePageData } from '../_core/utils/homepage';
 
 type TProps = {
