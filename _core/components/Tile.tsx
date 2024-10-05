@@ -16,13 +16,17 @@ type TPageData = {
 
 type TTileProps = {
     data: TPageData; // Define that the component receives a prop called 'data' of type TPageData
+    margin?: string;
+    maxWidth?: string;
 };
 
-const Tile: React.FC<TTileProps> = ({ data }) => {
+const Tile: React.FC<TTileProps> = ({ data, margin, maxWidth }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
+        <section id={data.title}>
         <motion.div
+            style={{marginTop: margin, maxWidth: maxWidth}}
             className={styles.container}
             initial={{
                 background: 'var(--color-primary-gradient-200)',
@@ -84,6 +88,7 @@ const Tile: React.FC<TTileProps> = ({ data }) => {
                 </motion.div> */}
             </motion.div>
         </motion.div>
+        </section>
     );
 };
 

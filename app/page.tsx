@@ -7,11 +7,20 @@ import HomeHeader from '_core/components/HomeHeader';
 import Tile from '_core/components/Tile';
 
 import styles from './page.module.scss';
+import ContactTile from '_core/components/ContactTile';
 
 type TPageData = {
     title: string;
     desc: string | JSX.Element | JSX.Element;
 };
+
+type TContactData = {
+    name: string;
+    email: string;
+    linkedin: string;
+    img: string;
+};
+
 
 
 
@@ -40,15 +49,70 @@ const HomePage = async () => {
         ),
     };
 
+    const ContactData: TPageData = {
+        title: 'Contact',
+        desc: "We are a team of enthusiastic engineers from Egypt, driven by our fascination with space exploration. ExoVision was developed as our contribution to NASA's International Space Apps Challenge, with the aim of applying our skills and knowledge while igniting a shared passion for the cosmos.",
+    };
+
+    const IbrahimData: TContactData = {
+        name: 'Ibrahim Hamada',
+        email: "ibrahimhamada439@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ibrahim-hamada-158669218/",
+        img: require('_core/assets/ibrahim.jpg').default,
+    };
+
+    const AyaData: TContactData = {
+        name: 'Aya Hossam',
+        email: "ayahm1@uci.edu",
+        linkedin: "https://www.linkedin.com/in/aya-hussam-eldin-356938209/",
+        img: require('_core/assets/aya.jpeg').default,
+    };
+
+    const KareemData: TContactData = {
+        name: 'Kareem Morsi',
+        email: "kreemmorsy2001@gmail.com",
+        linkedin: "https://www.linkedin.com/in/kreemmorsy/",
+        img: require('_core/assets/kareem.jpeg').default,
+    };
+
+    const RehandData: TContactData = {
+        name: 'Rehand Mohamed',
+        email: "rehandabdelhady@gmail.com",
+        linkedin: "https://www.linkedin.com/in/rehand-abdelhady-5150a1206/",
+        img: require('_core/assets/rehand.jpeg').default,
+    };
+
+    const RehabData: TContactData = {
+        name: 'Rehab Yehia',
+        email: "rehabyehia282002@gmail.com",
+        linkedin: "https://www.linkedin.com/in/rehabyehia/",
+        img: require('_core/assets/rehab.jpeg').default,
+    };
+
 
 
     return (
         <AnimatedWrapper>
             <div className={styles.container}>
                 <div className={styles.tileContainer}>
-                    <Tile data={ExploreData} />
+                    <Tile data={ExploreData} margin='70px'/>
+                    <Tile data={AboutData} margin='70px'/>
+                    <Tile data={ContactData} margin='70px'/>
 
-                    <Tile data={AboutData} />
+                <div className={styles.tileCtr}>
+
+                    <ContactTile data={IbrahimData}  margin='24px' maxWidth='468px'/>
+                    <ContactTile data={AyaData} margin='24px' maxWidth='468px'/>
+                    <ContactTile data={KareemData} margin='24px' maxWidth='468px'/>
+                    <ContactTile data={RehandData} margin='24px' maxWidth='468px'/>
+                </div>
+
+                    <div className={styles.oneCard}>
+                    <ContactTile data={RehabData} margin='24px' maxWidth='468px'/>
+                    </div>
+
+
+
                 </div>
             </div>
         </AnimatedWrapper>
